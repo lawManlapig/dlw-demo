@@ -1,0 +1,34 @@
+{
+  "formatVersion": "1",
+  "header": {
+    "description": "Data Conversion Application - DEMO",
+    "originalLanguage": "en",
+    "abapLanguageVersion": "cloudDevelopment"
+  },
+  "generalInformation": {
+    "appType": "ui5",
+    "catalogId": "SAP_TC_UI5_REPO_UIAD"
+  },
+  "ui5AppDetails": {
+    "appId": "conversionapplicationdemo"
+  },
+  "navigation": {
+    "targetMappingId": "UI5R_6CB4D7852F5178CF1ECF2FA523AD1F5F1E44F94C_TM",
+    "semanticObject": "rapdemosemantic",
+    "action": "ManageDataConversion",
+    "desktop": true,
+    "tablet": true,
+    "phone": true
+  },
+  "tiles": [
+    {
+      "id": "UI5R_6CB4D7852F5178CF1ECF2FA523AD1F5F1E44F94C_AL",
+      "tileType": "static",
+      "isDefault": true,
+      "standard": {
+        "title": "Data Conversion Application - DEMO",
+        "subtitle": "This is a Demo RAP Application for learning purposes"
+      }
+    }
+  ]
+}
