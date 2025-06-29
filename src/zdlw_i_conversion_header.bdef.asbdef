@@ -1,0 +1,52 @@
+managed;
+strict ( 2 );
+
+define behavior for ZDLW_I_Conversion_Header alias ConversionHeader
+implementation in class zcl_bp_conversion_header unique
+persistent table zdlw_conv_hdr
+lock master
+authorization master ( instance )
+early numbering
+//etag master <field_name>
+{
+  create;
+  update;
+  delete;
+  field ( readonly ) ConvId;
+  association _Item { create; }
+
+  // Mapping
+  mapping for zdlw_conv_hdr
+    {
+      ConvId        = conv_id;
+      Description   = description;
+      CreatedAt     = created_at;
+      CreatedBy     = created_by;
+      LastChangedBy = last_changed_by;
+      LastChangedAt = last_changed_at;
+    }
+}
+
+define behavior for ZDLW_I_Conversion_Item alias ConvserionItem
+implementation in class zcl_bp_conversion_item unique
+persistent table zdlw_conv_itm
+lock dependent by _Header
+authorization dependent by _Header
+//etag master <field_name>
+{
+  update;
+  delete;
+  field ( readonly ) ConvId, ConvSubId;
+  association _Header;
+
+  // Mapping
+  mapping for zdlw_conv_itm
+    {
+      ConvId          = conv_id;
+      ConvSubId       = conv_sub_id;
+      DescriptionFrom = description_from;
+      DescriptionTo   = description_to;
+      ValueFrom       = value_from;
+      ValueTo         = value_to;
+    }
+}

@@ -1,0 +1,5 @@
+@EndUserText.label: 'Demo Service Definition'
+define service ZDLW_SD_Demo {
+  expose ZDLW_C_Conversion_Header as ConversionHeader;
+  expose ZDLW_C_CONVERSION_ITEM   as ConversionItem;
+}

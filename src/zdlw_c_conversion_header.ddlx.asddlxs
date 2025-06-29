@@ -1,0 +1,48 @@
+@Metadata.layer: #CORE
+@UI: {
+    headerInfo: {
+        typeName: 'Conversion Category',
+        typeNamePlural: 'Conversions Categories'
+    }
+}
+@Search.searchable: true
+annotate view ZDLW_C_Conversion_Header with
+{
+  @UI.facet: [{
+      id: 'HeaderDetails',
+      purpose: #STANDARD,
+      position: 1,
+      label: 'Header Details',
+      type: #IDENTIFICATION_REFERENCE
+  },{
+      id: 'ItemDetails',
+      purpose: #STANDARD,
+      position: 2,
+      label: 'Item Details',
+      type: #LINEITEM_REFERENCE,
+      targetElement: '_Item'
+  }]
+
+  @Search.defaultSearchElement: true
+  @UI.lineItem: [{
+    position: 1,
+    label: 'Conversion ID'
+  }]
+  @UI.identification: [{ position: 1 }]
+  ConvId;
+  @Search.defaultSearchElement: true
+  @UI.lineItem: [{ hidden: true }]
+  @UI.identification: [{
+    position: 2,
+    label: 'Description'
+  }]
+  Description;
+  @UI.hidden: true
+  CreatedBy;
+  @UI.hidden: true
+  CreatedAt;
+  @UI.hidden: true
+  LastChangedBy;
+  @UI.hidden: true
+  LastChangedAt;
+}
