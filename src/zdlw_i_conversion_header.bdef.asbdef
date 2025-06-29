@@ -9,10 +9,15 @@ authorization master ( instance )
 early numbering
 //etag master <field_name>
 {
+  // Operations
   create;
   update;
   delete;
+
+  // Feature Control
   field ( readonly ) ConvId;
+
+  // Associations
   association _Item { create; }
 
   // Mapping
@@ -32,12 +37,23 @@ implementation in class zcl_bp_conversion_item unique
 persistent table zdlw_conv_itm
 lock dependent by _Header
 authorization dependent by _Header
+early numbering
 //etag master <field_name>
 {
   update;
   delete;
   field ( readonly ) ConvId, ConvSubId;
+  field ( mandatory ) ValueFrom, ValueTo;
   association _Header;
+
+  // Validations
+  validation validateMandatoryFields
+  on save
+  {
+    create;
+    update;
+    field ValueTo, ValueFrom;
+  }
 
   // Mapping
   mapping for zdlw_conv_itm

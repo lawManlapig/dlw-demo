@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<abapGit version="v1.0.0" serializer="LCL_OBJECT_MSAG" serializer_version="v1.0.0">
+ <asx:abap xmlns:asx="http://www.sap.com/abapxml" version="1.0">
+  <asx:values>
+   <T100A>
+    <ARBGB>ZDLW_CUSTOM_MESSAGES</ARBGB>
+    <MASTERLANG>E</MASTERLANG>
+    <STEXT>Custom Messages for DEMO</STEXT>
+   </T100A>
+   <T100>
+    <T100>
+     <SPRSL>E</SPRSL>
+     <ARBGB>ZDLW_CUSTOM_MESSAGES</ARBGB>
+     <MSGNR>001</MSGNR>
+     <TEXT>Ang &quot;From&quot; field ay mandatory. Pakilagyan ng value.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>E</SPRSL>
+     <ARBGB>ZDLW_CUSTOM_MESSAGES</ARBGB>
+     <MSGNR>002</MSGNR>
+     <TEXT>Ang &quot;To&quot; field ay mandatory. Pakilagyan ng value.</TEXT>
+    </T100>
+   </T100>
+  </asx:values>
+ </asx:abap>
+</abapGit>
